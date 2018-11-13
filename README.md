@@ -1,5 +1,7 @@
 # BooksCatalogue
 
+Need to run "npm install" . Npm version 3.8.0
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8.
 
 ## Development server
