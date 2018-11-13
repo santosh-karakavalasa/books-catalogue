@@ -1,0 +1,16 @@
+<h3 style="padding: 4px;">Books List ( {{totalbooksCount}} )</h3>
+<mat-accordion  multi="true">
+  <mat-expansion-panel *ngFor="let book of books">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+       {{book.title}}
+      </mat-panel-title>
+      <mat-panel-description>
+        {{book.category}}
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+
+    <p>  {{book.description}}</p>
+  </mat-expansion-panel>
+
+</mat-accordion>

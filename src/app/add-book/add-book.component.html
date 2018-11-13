@@ -1,0 +1,24 @@
+<mat-card>
+  <form [formGroup]= "addBookForm"  class="add-book-form" (submit)= "onAddBook()" >
+      <mat-form-field class="add-book-full-width" >
+          <input matInput  formControlName = "title"  placeholder="Book Title">
+          <mat-error *ngIf="!this.addBookForm.get('title').valid && this.addBookForm.get('title').touched">Please enter valid title</mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="add-book-full-width">
+        <mat-select formControlName= "category" placeholder="Book Category">
+          <mat-option *ngFor="let category of categories" [value]="category">
+            {{category}}
+          </mat-option>
+        </mat-select>
+        <mat-error *ngIf="!this.addBookForm.get('category').valid && this.addBookForm.get('category').touched">Please enter valid category</mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="add-book-full-width">
+          <textarea rows="4" matInput formControlName= "description" placeholder="Book Description"></textarea>
+          <mat-error *ngIf="!this.addBookForm.get('description').valid && this.addBookForm.get('description').touched">Please enter valid description</mat-error>
+      </mat-form-field>
+
+      <button mat-raised-button color="accent"  type="submit" [disabled]= '!addBookForm.valid' >Add Book</button>
+  </form>
+</mat-card>
